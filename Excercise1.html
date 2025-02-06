@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #task{
+            margin: auto;
+            width: 300px;
+            height: 100px;
+            border-radius: 20px;
+            align-items: center;
+            text-align: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="task"></div>
+    <script>
+        let task = [
+            {description: "Task1", priority: 1},
+            {description: "Task2", priority: 0},
+            {description: "Task3", priority: 1}
+        ]
+        task.forEach((task, index) => {
+            let div = document.createElement("div");
+            div.innerHTML = task.description;
+            if(task.priority === 1){
+                div.style.background = "red";
+            }
+            else if(task.priority === 0){
+                div.style.background = "gray";
+            }
+            document.getElementById("task").appendChild(div);
+        });
+    </script>
+</body>
+</html>
